@@ -7,7 +7,7 @@ const ProfileSchema = new mongoose.Schema({
   },
   handle: {
     type: String,
-    required: true,
+    required: false,
     max: 40
   },
   company: {
