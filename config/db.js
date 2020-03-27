@@ -4,16 +4,16 @@ const db = config.get('mongoURI');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(db, { 
-      useUnifiedTopology: true, 
-      useCreateIndex: true  
-      
+    await mongoose.connect(db, {
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useNewUrlParser: true
     });
     console.log('MongoDB Connected...');
-  } catch(err) {
-      //Exit process with failure
-      process.exit(1);
+  } catch (err) {
+    //Exit process with failure
+    process.exit(1);
   }
-}
+};
 
 module.exports = connectDB;
